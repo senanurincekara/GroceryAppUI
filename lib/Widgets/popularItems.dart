@@ -1,6 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:groceryapp/components/random_color.dart';
 
 class PopularItemsWidget extends StatelessWidget {
   final bool isDarkMode;
@@ -39,18 +38,6 @@ class PopularItemsWidget extends StatelessWidget {
     },
   ];
 
-  Color getRandomColor() {
-    final List<Color> colors = [
-      Color.fromARGB(255, 196, 241, 253),
-      Color.fromARGB(255, 253, 196, 196),
-      Color.fromARGB(255, 253, 241, 196),
-      Color.fromARGB(255, 196, 253, 196),
-      Color.fromARGB(255, 241, 196, 253),
-    ];
-    final random = Random();
-    return colors[random.nextInt(colors.length)];
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -75,7 +62,7 @@ class PopularItemsWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
             width: 1,
-            color: getRandomColor(),
+            color: getRandomColor(), // Use the imported function
           ),
           boxShadow: [
             BoxShadow(

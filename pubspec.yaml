@@ -65,6 +65,8 @@ flutter:
     - assets/images/
     - assets/images/popular/
     - assets/images/ads/
+    - assets/images/fruits/
+    - assets/images/vegetables/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
