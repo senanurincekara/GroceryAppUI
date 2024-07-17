@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceryapp/components/side_menu.dart';
+import 'package:groceryapp/provider/add_to_cart_provider.dart';
 import 'package:groceryapp/screens/home_page.dart';
 import 'package:groceryapp/screens/explore_page.dart';
 import 'package:groceryapp/screens/cart_page.dart';
@@ -7,8 +8,14 @@ import 'package:groceryapp/screens/profile_page.dart';
 import 'package:groceryapp/components/bottom_navigation_bar.dart';
 import 'package:groceryapp/theme/dark_theme.dart';
 import 'package:groceryapp/theme/light_theme.dart';
+import 'package:provider/provider.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: ((context) => CartProvider()))
+      ],
+      child: MyApp(),
+    ));
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -98,7 +105,10 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
         controller: _controller,
         toggleCollapse: toggleCollapse,
       ),
-      ExplorePage(),
+      ExplorePage(
+        isDarkMode: widget.isDarkMode,
+        toggleTheme: widget.toggleTheme,
+      ),
       CartPage(),
       ProfilePage(),
     ];
