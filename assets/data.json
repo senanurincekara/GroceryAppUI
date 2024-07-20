@@ -1,0 +1,133 @@
+{
+    "user": {
+      "id": 12345,
+      "name": "Eve Doe",
+      "email": "Evedoe@example.com",
+      "phone": "+90 555 555 5555",
+      "ProfilImagePath": "assets/images/user.png",
+      "address": [
+        {
+        "addressId": 123,
+        "addressType": "home",
+        "street": "123 Main St",
+        "city": "Istanbul",
+        "state": "TR",
+        "postalCode": "34000"
+      },
+      {
+        "addressId": 124,
+        "addressType": "home2",
+        "street": "458 Main2 St",
+        "city": "IstanbKonyaul",
+        "state": "TR",
+        "postalCode": "74000"
+      }
+    
+    ]
+    },
+    "orders": [
+      {
+        "orderId": 98765,
+        "orderDate": "2023-06-15",
+        "status": "Delivered",
+        "totalPrice": 150.75,
+        "items": [
+          {
+            "productId": "1",
+            "name": "Apple",
+            "imagePath": "assets/images/fruits/16.png",
+            "quantity": 2,
+            "price": 50.25
+          },
+          {
+            "productId": "1",
+          "name": "Onions",
+          "imagePath": "assets/images/vegetables/25.png",
+            "quantity": 6,
+            "price": 30.25
+          }
+        ]
+      },
+      {
+        "orderId": 90765,
+        "orderDate": "2022-07-14",
+        "status": "Delivered",
+        "totalPrice": 150.75,
+        "items": [
+          {
+            "productId": "1",
+            "name": "Apple",
+            "imagePath": "assets/images/fruits/16.png",
+            "quantity": 2,
+            "price": 50.25
+          },
+          {
+            "productId": "2",
+          "name": "Orange",
+          "imagePath": "assets/images/fruits/17.png",
+            "quantity": 1,
+            "price": 50.25
+          }
+        ]
+      },
+      {
+        "orderId": 98766,
+        "orderDate": "2023-06-20",
+        "status": "Cancelled",
+        "totalPrice": 75.50,
+        "items": [
+          {
+            "productId": "1",
+            "name": "Apple",
+            "imagePath": "assets/images/fruits/16.png",
+            "quantity": 3,
+            "price": 25.00
+          },
+          {
+            "productId": "4",
+            "name": "Strawberry",
+            "imagePath": "assets/images/fruits/20.png",
+            "quantity": 3,
+            "price": 25.00
+          },
+          {
+            "productId": "4",
+            "name": "Corn",
+            "imagePath": "assets/images/vegetables/22.png",
+            "quantity": 3,
+            "price": 25.00
+          }
+        ]
+      }
+    ],
+    "currentOrder": {
+      "orderId": 98767,
+      "orderDate": "2023-07-18",
+      "status": "Processing",
+      "totalPrice": 200.00,
+      "items": [
+        {
+          "productId": "1",
+          "name": "Carrot",
+          "imagePath": "assets/images/vegetables/24.png",
+          "quantity": 4,
+          "price": 100.00
+        },
+        {
+            "productId": "1",
+            "name": "Apple",
+            "imagePath": "assets/images/fruits/16.png",
+          "quantity": 2,
+          "price": 50.00
+        },
+        {
+          "productId": "1",
+          "name": "Broccoli",
+          "imagePath": "assets/images/vegetables/23.png",
+        "quantity": 1,
+        "price": 5.00
+      }
+      ]
+    }
+  }
+  

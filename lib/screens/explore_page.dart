@@ -35,14 +35,36 @@ class _ExplorePageState extends State<ExplorePage> {
                 child: TabBar(
                   isScrollable: true,
                   tabs: [
-                    CustomTab(iconPath: 'assets/images/5.png', label: 'Fruits'),
                     CustomTab(
-                        iconPath: 'assets/images/6.png', label: 'Vegetables'),
-                    CustomTab(iconPath: 'assets/images/7.png', label: 'Dairy'),
-                    CustomTab(iconPath: 'assets/images/8.png', label: 'Meat'),
-                    CustomTab(iconPath: 'assets/images/5.png', label: 'Snacks'),
+                      iconPath: 'assets/images/5.png',
+                      label: 'Fruits',
+                      isDarkMode: widget.isDarkMode,
+                    ),
                     CustomTab(
-                        iconPath: 'assets/images/5.png', label: 'Beverages'),
+                      iconPath: 'assets/images/6.png',
+                      label: 'Vegetables',
+                      isDarkMode: widget.isDarkMode,
+                    ),
+                    CustomTab(
+                      iconPath: 'assets/images/7.png',
+                      label: 'Dairy',
+                      isDarkMode: widget.isDarkMode,
+                    ),
+                    CustomTab(
+                      iconPath: 'assets/images/8.png',
+                      label: 'Meat',
+                      isDarkMode: widget.isDarkMode,
+                    ),
+                    CustomTab(
+                      iconPath: 'assets/images/5.png',
+                      label: 'Snacks',
+                      isDarkMode: widget.isDarkMode,
+                    ),
+                    CustomTab(
+                      iconPath: 'assets/images/5.png',
+                      label: 'Beverages',
+                      isDarkMode: widget.isDarkMode,
+                    ),
                   ],
                   indicatorColor: Color.fromARGB(255, 21, 0, 0),
                 ),
@@ -174,10 +196,11 @@ class ProductCard extends StatelessWidget {
               width: 1,
               color: getRandomColor(),
             ),
-            color: Colors.white,
+            color: isDarkMode ? Color.fromARGB(255, 79, 79, 79) : Colors.white,
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
+                color:
+                    const Color.fromARGB(255, 107, 107, 107).withOpacity(0.5),
                 spreadRadius: 2,
                 blurRadius: 5,
                 offset: Offset(0, 3), // changes position of shadow
@@ -208,6 +231,9 @@ class ProductCard extends StatelessWidget {
                         Text(
                           product.imageName,
                           style: TextStyle(
+                            color: isDarkMode
+                                ? Color.fromARGB(255, 6, 5, 5)
+                                : Color.fromARGB(255, 34, 29, 29),
                             fontSize: 16.0,
                             fontWeight: FontWeight.bold,
                           ),
@@ -219,13 +245,18 @@ class ProductCard extends StatelessWidget {
                             Text(
                               "\$${product.price}",
                               style: TextStyle(
+                                fontWeight: FontWeight.w700,
                                 fontSize: 14.0,
-                                color: const Color.fromARGB(255, 212, 2, 2),
+                                color: isDarkMode
+                                    ? Color.fromARGB(255, 6, 5, 5)
+                                    : const Color.fromARGB(255, 212, 2, 2),
                               ),
                             ),
                             Icon(
                               Icons.shopping_cart,
-                              color: const Color.fromARGB(255, 212, 2, 2),
+                              color: isDarkMode
+                                  ? Color.fromARGB(255, 6, 5, 5)
+                                  : const Color.fromARGB(255, 212, 2, 2),
                             ),
                           ],
                         )

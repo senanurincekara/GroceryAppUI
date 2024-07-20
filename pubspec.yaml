@@ -38,6 +38,10 @@ dependencies:
   carousel_slider: ^4.2.1
   google_nav_bar: ^5.0.6
   provider: ^6.1.2
+  quickalert: ^1.1.0
+  path_provider: ^2.0.11
+  intl: ^0.18.0
+  lottie: ^3.1.2
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +73,8 @@ flutter:
     - assets/images/fruits/
     - assets/images/vegetables/
     - assets/images/background/
+    - assets/data.json
+    - assets/animations/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

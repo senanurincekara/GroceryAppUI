@@ -4,6 +4,9 @@ import 'package:groceryapp/provider/add_to_cart_provider.dart';
 import 'package:groceryapp/screens/home_page.dart';
 import 'package:groceryapp/screens/explore_page.dart';
 import 'package:groceryapp/screens/cart_page.dart';
+import 'package:groceryapp/screens/my_orders_page.dart';
+import 'package:groceryapp/screens/personal_data_screen.dart';
+import 'package:groceryapp/screens/profile_addresses_page.dart';
 import 'package:groceryapp/screens/profile_page.dart';
 import 'package:groceryapp/components/bottom_navigation_bar.dart';
 import 'package:groceryapp/theme/dark_theme.dart';
@@ -39,6 +42,17 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       theme: isDarkMode ? darkTheme : lightTheme,
       home: MainScreen(isDarkMode: isDarkMode, toggleTheme: toggleTheme),
+      routes: {
+        '/personalData': (context) =>
+            PersonalDataPage(isDarkMode: isDarkMode, toggleTheme: toggleTheme),
+        '/addresses': (context) =>
+            AddressesPage(isDarkMode: isDarkMode, toggleTheme: toggleTheme),
+        '/orders': (context) =>
+            OrdersPage(isDarkMode: isDarkMode, toggleTheme: toggleTheme),
+        // '/paymentMethods': (context) => PaymentMethodsPage(),
+        // '/faqs': (context) => FaqsPage(),
+        // '/community': (context) => CommunityPage(),
+      },
     );
   }
 }
@@ -109,8 +123,14 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
         isDarkMode: widget.isDarkMode,
         toggleTheme: widget.toggleTheme,
       ),
-      CartPage(),
-      ProfilePage(),
+      CartPage(
+        isDarkMode: widget.isDarkMode,
+        toggleTheme: widget.toggleTheme,
+      ),
+      ProfilePage(
+        isDarkMode: widget.isDarkMode,
+        toggleTheme: widget.toggleTheme,
+      ),
     ];
 
     return WillPopScope(
@@ -129,7 +149,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         body: Stack(
           children: <Widget>[
-            const SideMenu(),
+            SideMenu(isDarkMode: widget.isDarkMode),
             AnimatedPositioned(
               left: isCollapsed ? 0 : 0.6 * screenWidth,
               right: isCollapsed ? 0 : -0.2 * screenWidth,

@@ -4,6 +4,8 @@ import 'package:groceryapp/provider/add_to_cart_provider.dart';
 import 'package:groceryapp/screens/explore_page.dart';
 
 import 'package:provider/provider.dart';
+import 'package:quickalert/models/quickalert_type.dart';
+import 'package:quickalert/widgets/quickalert_dialog.dart';
 
 class ItemDetailsScreen extends StatefulWidget {
   final Product product;
@@ -61,8 +63,22 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
       widget.product.imagePath,
       quantity, // Pass the quantity
     );
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('${widget.product.imageName} added to cart!')),
+    // ScaffoldMessenger.of(context).showSnackBar(
+    //   SnackBar(content: Text('${widget.product.imageName} added to cart!')),
+    // );
+    QuickAlert.show(
+      context: context,
+      type: QuickAlertType.success,
+      widget: Center(
+        child: Text(
+          '${widget.product.imageName} added to cart!',
+          style: TextStyle(
+            fontSize: 18, // Adjust the font size as needed
+            color: Colors.black,
+          ),
+        ),
+      ),
+      confirmBtnColor: Color.fromARGB(255, 0, 52, 18),
     );
   }
 

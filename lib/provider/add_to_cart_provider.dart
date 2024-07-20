@@ -40,7 +40,7 @@ class CartProvider with ChangeNotifier {
       _items.putIfAbsent(
         productId,
         () => CartItem(
-          id: DateTime.now().toString(),
+          id: productId,
           imagePath: imagePath,
           name: title,
           price: price,
