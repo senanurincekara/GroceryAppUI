@@ -9,6 +9,18 @@ A Flutter-based mobile app for managing groceries, featuring a shopping cart sys
 - **User Management:** Manage user profiles and personal data from json file.
 - **Data Storage:** Product and user information is stored in a JSON file for easy updates and management.
 
+#
+
+Flutter tabanlı bir mobil uygulama, market alışverişlerini yönetmek için tasarlanmıştır ve alışveriş sepeti sistemi, dinamik tema ve şık bir kullanıcı arayüzü sunar. Bu uygulama, hem açık hem de koyu temaları destekler ve kullanıcıların ürünleri tarayıp sepetlerine eklemelerine, ayrıca sepetlerindeki ürünlerle ilgili güncellemeler yapmalarına olanak tanır. Ürün ve kullanıcı bilgileri bir JSON dosyasında saklanır.
+
+Özellikler:
+
+- Dinamik Tema: Açık ve koyu temalar arasında sorunsuz geçiş yapın.
+- Alışveriş Sepeti Sistemi: Sepete ürün ekleyin, çıkarın ve güncelleyin.
+- Kullanıcı Yönetimi: Kullanıcı profillerini ve kişisel verileri JSON dosyasından yönetin.
+- Veri Depolama: Ürün ve kullanıcı bilgileri, kolay güncellemeler ve yönetim için JSON dosyasında saklanır
+
+
 ## Pages
 Home Page - dark mode
 
